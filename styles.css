@@ -1,0 +1,31 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+    justify-content: center;
+    background-color: var(--grisClaro);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+ :root {
+    --blanco: #ffffff;
+    --primario: #ffc107;
+    --oscuro: #000000;
+    --secundario: #0097a7;
+    --gris: #757575;
+    --grisClaro: #DFE9F3;
+}
+
+.centrar {
+    margin: 100px;
+    align-items: center;
+    padding: 40px;
+}
+
+.contenido {
+    display: flex;
+    margin: 10px;
+    padding: 20px;
+    background-color: var(--secundario);
+    justify-content: center;
+    font-weight: bold;
+}
