@@ -1,37 +1,43 @@
-console.log("Hola mundo")
-
-
 const retirardinero = () => {
-    const dineroaretirar = document.getElementById("dinero").value;
-    if (validarmultiplocinco(dineroaretirar)) {
-        if (dineroaretirar >= 50000 && dineroaretirar <= 1200000) {
-            var mensaje = "Es posible retirar dinero";
-            //document.getElementById('mensajes').innerHTML = retornarbilletes(dineroaretirar);
-            console.log(retornarbilletes(dineroaretirar));
+    const dinero=parseInt((document.getElementById("dinero").value),10);
+    if (dinero >= 50000 && dinero <= 1200000) {
+        if (validarmultiplocinco(dinero)) {
+            document.getElementById('mensajes').innerHTML = retornarbilletes(dinero);
+        }else{
+            document.getElementById('mensajes').innerHTML="No es posible retirar dinero, ya que la cantidad no es multiplo de $5000";
         }
+    }else{
+        document.getElementById('mensajes').innerHTML="La cantidad de dinero debe estar entre $50.000 y $1.200.000";
     }
-
 }
 
 const validarmultiplocinco = (parametro) => {
     if (parametro % 5000 === 0) {
         return true;
-    } else {
-        return false;
-    }
+    } return false;
+    
 }
 
 const retornarbilletes = (param) => {
-
-    let bs50, bs20, bs10, bs5 = 0;
-    c = 0;
-
-    if (param % 50000) {
-        bs50 += 1;
-        return;
+    let bs50=0,bs20=0,bs10=0,bs5=0;
+    while(param!=0){
+        if (param-50000>=0) {
+            bs50 += 1;
+            param-=50000;
+        }else if(param-20000>=0){
+            bs20+=1;
+            param-=20000;
+        }else if(param-10000>=0){
+            bs10+=1;
+            param-=10000;
+        }else if(param-5000>=0){
+            bs5+=1;
+            param-=5000;
+        }
     }
-    param = param - 50000;
-    return bs50;
-    //return [bs50, bs20, bs10, bs5];
-
+    let cadena=`Hay ${bs50} billetes de $50.000\n`; 
+    cadena+=`Hay ${bs20} billetes de $20.000\n`; 
+    cadena+=`Hay ${bs10} billetes de $10.000\n`; 
+    cadena+=`Hay ${bs5}  billetes de $5.000\n`; 
+    return cadena;
 }
