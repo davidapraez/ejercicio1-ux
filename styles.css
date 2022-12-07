@@ -29,3 +29,11 @@
     justify-content: center;
     font-weight: bold;
 }
+.sumarrestar-segundos{
+    align-items: center;
+    width: auto;
+}
+.caja{
+   border-spacing: 10px;
+   width: 248px; 
+}
