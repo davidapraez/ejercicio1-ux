@@ -12,37 +12,44 @@
 
 <body>
     <div class="cajero-automatico">
-        <h1>Cajero automatico</h1>
+        <h1>Cajero automático</h1>
         <label for="">Ingrese cantidad de dinero a retirar</label>
         <input type="number" name="" id="dinero" placeholder="Digite cantidad">
         <input onclick="retirardinero()" type="button" value="retirar" class="guardar">
+    
         <div class="contenido">
+            <h2>Mensajes:</h2>
             <textarea name="" id="mensajes" cols="30" rows="10"></textarea>
         </div>
     </div>
-    <div class="calculo-horas">
-        <h1>Calcular grados con horas</h1>
-        <label for="">Ingrese Horas</label>
-        <input type="time" id="horas-minutos" step="1">
-        <input onclick="calcularTiempo()" type="button" value="calcular" class="guardar">
-        <div class="contenido">
-            <textarea name="" id="mensajes-horas" cols="30" rows="10"></textarea>
-        </div>
+
+   <div class="calculo-horas">
+    <h1>Calcular grados con horas</h1>
+    <label for="">Ingrese Horas</label>
+    <input type="time" id="horas-minutos" step="1">
+    <input onclick="calcularGrados()" type="button" value="calcular" class="guardar">
+
+    <div class="contenido">
+        <h2>Resultados:</h2>
+        <textarea name="" id="mensajes-horas" cols="30" rows="10"></textarea>
     </div>
+</div>
+
+
     </div>
     <div class="sumarrestar-segundos">
         <h1>Sumar o restar segundos</h1>
-        <input class="caja" type="number" name="" id="horas" placeholder="Digite horas" max="24" min="0">
-        <input class="caja" type="number" name="" id="minutos" placeholder="Digite minutos" max="60" min="0">
-        <input class="caja" type="number" name="" id="segundos" placeholder="Digite segundos" max="60" min="0">
-        <select name="selecciona" id="">
+        <input class="caja" type="number" name="" id="horas" placeholder="Digite horas" max="24" min="0" step="1">
+        <input class="caja" type="number" name="" id="minutos" placeholder="Digite minutos" max="60" min="0" step="1">
+        <input class="caja" type="number" name="" id="segundos" placeholder="Digite segundos" max="60" min="0" step="1">
+        <select name="selecciona" id="operacion">
             <option value="sumar">Sumar</option>
-            <option value="Restar">Restar</option>
+            <option value="restar">Restar</option>
         </select>
         <input class="caja" type="number" name="" id="segundos-suma" placeholder="Segundos a sumar o restar">
         <input onclick="calcularSegundos()" type="button" value="calcular" class="guardar">
         <div class="contenido">
-            <textarea name="" id="mensajes-horas" cols="30" rows="10"></textarea>
+            <textarea name="" id="mensajes-suma-segundos" cols="30" rows="10"></textarea>
         </div>
     </div>
 
