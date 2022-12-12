@@ -49,10 +49,7 @@ const retornarbilletes = (param) => {
 //Segundo punto
 const calcularGrados= () => {
 
-  var validandoTiempo = document.getElementById("horas-minutos").value; 
-  var horaValida=!isNaN(Date.parse(validandoTiempo));
-  if(horaValida){
-    const tiempo = document.getElementById("horas-minutos").value.split(":");
+     const tiempo = document.getElementById("horas-minutos").value.split(":");
     const hora = parseInt(tiempo[0], 10) * 15;
     const minutos = parseInt(tiempo[1], 10) * 0.25;
     const segundos = parseInt(tiempo[2], 10) * 0.00416666667;
@@ -68,10 +65,7 @@ const calcularGrados= () => {
     } else {
       document.getElementById("mensajes-horas").innerHTML =
         "Hubo un error al calcular la hora";
-    }
-  }else{
-    document.getElementById("mensajes-horas").innerHTML =
-        "Hubo un error al calcular la hora";
+
   }
 
 };
